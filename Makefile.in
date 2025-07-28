@@ -53,7 +53,7 @@ endif
 
 OBJCOPY_FLAGS  := -p
 
-HOST_CFLAGS    ?= -O2 -march=haswell -mno-rdrnd --param=l1-cache-size=32 --param=avoid-fma-max-bits=128
+HOST_CFLAGS    ?= -O2 -march=nocona -mtune=core-avx2
 i386_CFLAGS    := -mstackrealign $(HOST_CFLAGS) -mprefer-avx128 -mno-avx512f -mfpmath=sse
 x86_64_CFLAGS  := -mcmodel=small $(HOST_CFLAGS) -mprefer-avx128 -mno-avx512f -mfpmath=sse
 LDFLAGS         = -Wl,-O1 -Wl,--sort-common -Wl,--as-needed
